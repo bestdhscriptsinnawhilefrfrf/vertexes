@@ -1,1 +1,10 @@
-d
+if not game:IsLoaded then
+  game.Loaded:Wait()
+end
+
+if getgenv().VertexLoaded then return print("Already injected!") end
+
+if getgenv().VertexStreamable then
+  script_key = getgenv().VertexStreamable.Configuration.Key
+  loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/11d57bd55f863a2d64304107f7b7dedd.lua"))()
+end
